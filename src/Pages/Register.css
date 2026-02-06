@@ -84,6 +84,7 @@
   transition: all 0.3s ease;
   background: #f8f9fa;
   outline: none;
+  color: #1a1a1a;
 }
 
 .input-group input:focus {
