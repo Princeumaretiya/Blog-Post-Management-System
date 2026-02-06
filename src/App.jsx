@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Register from './Pages/Register';
 import Login from './Pages/Login';
 import Dashboard from './Pages/Dashboard';
+import CreatePost from './Pages/CreatePost';
+import PostDetails from './Pages/PostDetails';
 import AuthGuard from './components/AuthGuard';
 import Navbar from './components/Navbar';
 import './App.css';
@@ -36,44 +38,26 @@ function App() {
           } 
         />
         <Route 
-          path="/my-posts" 
-          element={
-            <AuthGuard>
-              <div className="placeholder-page">
-                <Navbar />
-                <div style={{ padding: '40px', textAlign: 'center' }}>
-                  <h1>My Posts</h1>
-                  <p>This page is under construction.</p>
-                </div>
-              </div>
-            </AuthGuard>
-          } 
-        />
-        <Route 
           path="/create-post" 
           element={
             <AuthGuard>
-              <div className="placeholder-page">
-                <Navbar />
-                <div style={{ padding: '40px', textAlign: 'center' }}>
-                  <h1>Create New Post</h1>
-                  <p>This page is under construction.</p>
-                </div>
-              </div>
+              <CreatePost />
             </AuthGuard>
           } 
         />
         <Route 
-          path="/profile" 
+          path="/edit-post/:id" 
           element={
             <AuthGuard>
-              <div className="placeholder-page">
-                <Navbar />
-                <div style={{ padding: '40px', textAlign: 'center' }}>
-                  <h1>User Profile</h1>
-                  <p>This page is under construction.</p>
-                </div>
-              </div>
+              <CreatePost />
+            </AuthGuard>
+          } 
+        />
+        <Route 
+          path="/post/:id" 
+          element={
+            <AuthGuard>
+              <PostDetails />
             </AuthGuard>
           } 
         />

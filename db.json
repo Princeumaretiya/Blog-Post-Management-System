@@ -1,0 +1,66 @@
+{
+  "posts": [
+    {
+      "title": "Learning React",
+      "content": "React is a great library for building UIs.",
+      "author": "Jane test",
+      "id": "2"
+    },
+    {
+      "id": "4d4b",
+      "title": "wkjhnvcv,mnbn",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n",
+      "author": "Prince Umaretiya",
+      "image": "https://img.freepik.com/premium-vector/vector-blue-light-arrow-motion-tech-background_907220-1316.jpg?semt=ais_hybrid&w=740",
+      "createdAt": "2026-02-06T10:41:07.837Z"
+    },
+    {
+      "id": "cb0f",
+      "title": "yseretuyi",
+      "description": "lkjvhcgnm,",
+      "author": "test user",
+      "image": "https://img.freepik.com/premium-vector/vector-blue-light-arrow-motion-tech-background_907220-1316.jpg?semt=ais_hybrid&w=740",
+      "createdAt": "2026-02-06T11:04:10.992Z"
+    },
+    {
+      "id": "4ae3",
+      "title": "test by test",
+      "description": "qwertyuiopkjhgfdcvbnm,m ",
+      "author": "test user",
+      "image": "https://img.freepik.com/premium-vector/vector-blue-light-arrow-motion-tech-background_907220-1316.jpg?semt=ais_hybrid&w=740",
+      "createdAt": "2026-02-06T11:12:33.080Z"
+    },
+    {
+      "id": "f266",
+      "title": "jhkjgfgfhjkh",
+      "description": "kjhjhvgbn",
+      "author": "test by prince",
+      "image": "https://img.freepik.com/premium-vector/vector-blue-light-arrow-motion-tech-background_907220-1316.jpg?semt=ais_hybrid&w=740",
+      "createdAt": "2026-02-06T11:18:54.087Z"
+    },
+    {
+      "id": "64e7",
+      "title": "nmbnv",
+      "description": "klhjhvgc",
+      "author": "test by prince",
+      "image": "https://img.freepik.com/premium-vector/vector-blue-light-arrow-motion-tech-background_907220-1316.jpg?semt=ais_hybrid&w=740",
+      "createdAt": "2026-02-06T11:29:18.071Z"
+    },
+    {
+      "id": "aeae",
+      "title": "knjbhvj",
+      "description": ".nm,bnb",
+      "author": "test by prince jghjgc",
+      "image": "https://img.freepik.com/premium-vector/vector-blue-light-arrow-motion-tech-background_907220-1316.jpg?semt=ais_hybrid&w=740",
+      "createdAt": "2026-02-06T11:29:30.138Z"
+    },
+    {
+      "id": "f183",
+      "title": "kjghfg",
+      "description": "ihkugjyfhgfhj",
+      "author": "Prince Patel",
+      "image": "https://img.freepik.com/premium-vector/vector-blue-light-arrow-motion-tech-background_907220-1316.jpg?semt=ais_hybrid&w=740",
+      "createdAt": "2026-02-06T11:51:18.851Z"
+    }
+  ]
+}

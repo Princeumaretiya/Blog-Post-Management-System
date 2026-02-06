@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { FaBlog, FaHome, FaPlusSquare, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaBlog, FaHome, FaPlusSquare, FaSignOutAlt } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -25,14 +25,9 @@ const Navbar = () => {
                     <NavLink to="/dashboard" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
                         <FaHome className="nav-icon" /> Home
                     </NavLink>
-                    <NavLink to="/my-posts" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
-                        <FaBlog className="nav-icon" /> My Posts
-                    </NavLink>
+
                     <NavLink to="/create-post" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
-                        <FaPlusSquare className="nav-icon" /> Create
-                    </NavLink>
-                    <NavLink to="/profile" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
-                        <FaUser className="nav-icon" /> Profile
+                        <FaPlusSquare className="nav-icon" /> Create Post
                     </NavLink>
                 </div>
 
