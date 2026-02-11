@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import "./Login.css";
+import { toast } from "react-toastify";
 
 function Login() {
   const navigate = useNavigate();
@@ -51,13 +52,13 @@ function Login() {
           user.password === formData.password
         ) {
           localStorage.setItem("authData", JSON.stringify(user));
-          alert("Login Successful");
+          toast.success("Login Successful");
           navigate("/dashboard");
         } else {
-          alert("Invalid Email or Password");
+          toast.error("Invalid Email or Password");
         }
       } else {
-        alert("No user found. Please register first.");
+          toast.error("No user found. Please register first.");
       }
     }
   };
