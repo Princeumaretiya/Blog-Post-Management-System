@@ -47,6 +47,7 @@ const Analytics = () => {
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
+    const headers = ['ID', 'Title', 'Author', 'Date'];
 
     if (loading) {
         return (
@@ -115,10 +116,9 @@ const Analytics = () => {
                         <table className="analytics-table">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Date</th>
+                                    {headers.map((header) => (
+                                        <th>{header}</th>
+                                    ))}
                                 </tr>
                             </thead>
                             <tbody>
