@@ -1,30 +1,33 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import Navbar from '../components/Navbar';
 import './Analytics.css';
 
 const Analytics = () => {
+    const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 5;
 
     useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const response = await fetch('http://localhost:5001/posts');
-                const data = await response.json();
-                if (Array.isArray(data)) {
-                    setPosts(data);
-                }
-            } catch (error) {
-                console.error("Error fetching posts:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
         fetchPosts();
     }, []);
+
+    const fetchPosts = async () => {
+        try {
+            const response = await fetch('http://localhost:5001/posts');
+            const data = await response.json();
+            if (Array.isArray(data)) {
+                setPosts(data);
+            }
+        } catch (error) {
+            console.error("Error fetching posts:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     // Prepare data for the Bar Chart: Posts per Author
     const authorStats = posts.reduce((acc, post) => {
@@ -46,8 +49,33 @@ const Analytics = () => {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+    // Handle Edit
+    const handleEdit = (postId) => {
+        navigate(`/edit-post/${postId}`);
+    };
+
+    // Handle Delete
+    const handleDelete = async (postId) => {
+        if (window.confirm('Are you sure you want to delete this post?')) {
+            try {
+                const response = await fetch(`http://localhost:5001/posts/${postId}`, {
+                    method: 'DELETE'
+                });
+                if (response.ok) {
+                    alert('Post deleted successfully!');
+                    fetchPosts(); // Refresh the posts list
+                } else {
+                    alert('Failed to delete post');
+                }
+            } catch (error) {
+                console.error('Error deleting post:', error);
+                alert('Error deleting post');
+            }
+        }
+    };
+
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
-    const headers = ['ID', 'Title', 'Author', 'Date'];
+    const headers = ['ID', 'Title', 'Author', 'Date', 'Actions'];
 
     if (loading) {
         return (
@@ -128,6 +156,22 @@ const Analytics = () => {
                                         <td>{post.title}</td>
                                         <td>{post.author}</td>
                                         <td>{post.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'N/A'}</td>
+                                        <td className="action-buttons">
+                                            <button 
+                                                className="edit-btn" 
+                                                onClick={() => handleEdit(post.id)}
+                                                title="Edit"
+                                            >
+                                                ✏️
+                                            </button>
+                                            <button 
+                                                className="delete-btn" 
+                                                onClick={() => handleDelete(post.id)}
+                                                title="Delete"
+                                            >
+                                                🗑️
+                                            </button>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>

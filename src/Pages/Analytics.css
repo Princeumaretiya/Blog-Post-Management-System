@@ -78,6 +78,11 @@
     border-bottom: 1px solid #e2e8f0;
 }
 
+.analytics-table th:last-child,
+.analytics-table td:last-child {
+    text-align: center;
+}
+
 .analytics-table th {
     background-color: #f1f5f9;
     color: #475569;
@@ -129,6 +134,48 @@
     height: 50vh;
     font-size: 1.2rem;
     color: #64748b;
+}
+
+/* Action Buttons Styling - Scoped to Analytics Table Only */
+.analytics-table .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.analytics-table td.action-buttons {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.analytics-table .edit-btn,
+.analytics-table .delete-btn {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+    background: transparent;
+}
+
+.analytics-table .edit-btn {
+    color: #3b82f6;
+}
+
+.analytics-table .edit-btn:hover {
+    background: #dbeafe;
+    transform: scale(1.1);
+}
+
+.analytics-table .delete-btn {
+    color: #ef4444;
+}
+
+.analytics-table .delete-btn:hover {
+    background: #fee2e2;
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
