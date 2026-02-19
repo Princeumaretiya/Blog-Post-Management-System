@@ -172,27 +172,29 @@
     position: relative;
 }
 
-.card-fav-indicator {
-    position: absolute;
-    top: -25px;
-    right: 25px;
-    background: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.remove-fav-btn {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    border: 1px solid #fee2e2;
+    background: #fff5f5;
+    color: #e53e3e;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s;
-    z-index: 10;
+    gap: 0.5rem;
 }
 
-.card-fav-indicator:hover {
-    transform: scale(1.2);
-    box-shadow: 0 15px 25px rgba(255, 75, 43, 0.3);
+.remove-fav-btn:hover {
+    background: #e53e3e;
+    color: white;
+    border-color: #e53e3e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 62, 62, 0.2);
 }
 
 .fav-meta {
@@ -296,8 +298,7 @@
 }
 
 [data-theme='dark'] .fav-card,
-[data-theme='dark'] .fav-empty-state,
-[data-theme='dark'] .card-fav-indicator {
+[data-theme='dark'] .fav-empty-state {
     background: #161b22;
     border: 1px solid #30363d;
 }
@@ -317,6 +318,17 @@
 [data-theme='dark'] .read-btn {
     background: #f0f6fc;
     color: #0d1117;
+}
+
+[data-theme='dark'] .remove-fav-btn {
+    background: rgba(229, 62, 62, 0.1);
+    color: #f87171;
+    border-color: rgba(229, 62, 62, 0.2);
+}
+
+[data-theme='dark'] .remove-fav-btn:hover {
+    background: #e53e3e;
+    color: white;
 }
 
 @media (max-width: 768px) {
