@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
-import { FaPlus } from 'react-icons/fa';
+import { FaPlus, FaStar, FaRegStar } from 'react-icons/fa';
 import { MdEdit, MdDelete } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import { toast } from 'react-toastify';
 import './Dashboard.css';
 
 const Dashboard = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [favorites, setFavorites] = useState([]);
     const navigate = useNavigate();
     const authData = JSON.parse(localStorage.getItem("authData"));
 
@@ -29,7 +31,24 @@ const Dashboard = () => {
 
     useEffect(() => {
         fetchPosts();
+        // Load favorites
+        const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        setFavorites(savedFavorites);
     }, []);
+
+    const toggleFavorite = (e, postId) => {
+        e.stopPropagation(); // Prevent card click
+        let newFavorites;
+        if (favorites.includes(postId)) {
+            newFavorites = favorites.filter(id => id !== postId);
+            toast.info("Removed from favorites");
+        } else {
+            newFavorites = [...favorites, postId];
+            toast.success("Added to favorites!");
+        }
+        setFavorites(newFavorites);
+        localStorage.setItem('favorites', JSON.stringify(newFavorites));
+    };
 
     const handleDelete = async (postId) => {
         if (window.confirm("Are you sure you want to delete this post?")) {
@@ -103,6 +122,17 @@ const Dashboard = () => {
                                             alt={post.title}
                                             className="post-card-image"
                                         />
+                                        <button 
+                                            className={`favorite-btn ${favorites.includes(post.id) ? 'active' : ''}`}
+                                            onClick={(e) => toggleFavorite(e, post.id)}
+                                            title={favorites.includes(post.id) ? "Remove from favorites" : "Add to favorites"}
+                                        >
+                                            {favorites.includes(post.id) ? (
+                                                <FaStar size={22} color="#ffffff" />
+                                            ) : (
+                                                <FaRegStar size={22} color="#ffffff" />
+                                            )}
+                                        </button>
                                         <div className="post-actions">
                                             <button className="action-btn edit-btn" onClick={() => handleEdit(post.id)} title="Edit Post">
                                                 <MdEdit size={22} color="#ffffff" style={{ display: 'block' }} />

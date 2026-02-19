@@ -7,6 +7,7 @@ import Dashboard from './Pages/Dashboard';
 import CreatePost from './Pages/CreatePost';
 import PostDetails from './Pages/PostDetails';
 import Analytics from './Pages/Analytics';
+import Favorites from './Pages/Favorites';
 import AuthGuard from './components/AuthGuard';
 import Navbar from './components/Navbar';
 import './App.css';
@@ -66,6 +67,14 @@ function App() {
             element={
               <AuthGuard>
                 <Analytics />
+              </AuthGuard>
+            } 
+          />
+          <Route 
+            path="/favorites" 
+            element={
+              <AuthGuard>
+                <Favorites />
               </AuthGuard>
             } 
           />

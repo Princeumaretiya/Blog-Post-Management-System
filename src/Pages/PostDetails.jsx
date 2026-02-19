@@ -49,8 +49,8 @@ const PostDetails = () => {
         <div className="post-details-page">
             <Navbar />
             <main className="post-details-container">
-                <button className="back-btn" onClick={() => navigate('/dashboard')}>
-                    <FaArrowLeft /> Back to Feed
+                <button className="back-btn" onClick={() => navigate(-1)}>
+                    <FaArrowLeft /> Back to Favorites
                 </button>
 
                 <article className="full-post">
