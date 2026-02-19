@@ -6,14 +6,14 @@
 }
 
 .favorites-hero {
-    background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     color: white;
     padding: 6rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
     margin-bottom: 4rem;
-    box-shadow: 0 15px 40px rgba(255, 75, 43, 0.25);
+    box-shadow: 0 15px 40px rgba(79, 70, 229, 0.25);
 }
 
 .hero-shape {
